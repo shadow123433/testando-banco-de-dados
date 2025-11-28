@@ -1,14 +1,15 @@
 <?php
-$localhost = "localhost";
-$username = "root"; 
-$password = ""; 
-$dbname = "th2";
-$conn = new mysqli($localhost, $username, $password, $dbname);
-if ($conn->connect_error) {
-     echo "Falha na conexao";
-}
-echo "Conexao bem sucedida";
+$hostname = "localhost";
+$bancodedados = "teste2"; 
+$usuario = "root";
+$senha ="";
 
-$conn->close();
+
+$mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
+if ($mysqli->connect_errno) {
+     echo "falha ao conectar:(" . $mysqli->connect_errno . ")" . $mysqli->connect_errno;         
+}
+else
+echo "conectado ao banco de dados";
 
 ?>
